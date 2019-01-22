@@ -1,0 +1,43 @@
+  <!DOCTYPE html>
+  <html>
+  <head>
+      <!-- 합쳐지고 최소화된 최신 CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+  
+      <!-- 부가적인 테마 -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+  
+      <!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+      <meta charset="utf-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <title>Page Title</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+      <link rel="stylesheet" href="homestyle.css">
+      <script src="main.js"></script>
+  </head>
+  <body>
+        <div class="container">
+
+            <h1> 당신이 입력한 텍스트는 {{total}}개로 구성되어 있습니다. </h1>
+           
+            <a href = "{% url 'home' %}">
+            <button type="submit" class="btn btn-primary">다시하기</button> </a>
+            <br>
+            <pre><h2>입력한 텍스트 : </h2>
+            {{full}}
+            </pre>
+            <!-- 입력받은 전체 텍스트-->
+                
+            <h2> 단어 카운트 : </h2>
+            {% for word, howmany in dictionary%}
+            {{word}} : {{howmany}}
+            <br>
+            {%endfor%}
+            <!-- '단어' - '단어가 나온 횟수'-->
+        </div>
+  
+  </body>
+  </html>
+
